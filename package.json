@@ -1,0 +1,13 @@
+{
+  "name": "adaptavist-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "predeploy": "zip -r funfact.zip index.js",
+    "deploy": "aws lambda update-function-code --function-name $(grep FUNCTION_NAME .env | sed \"s\/FUNCTION_NAME=\\(.*\\)/\\1/\") --zip-file fileb://./funfact.zip"
+  },
+  "keywords": [],
+  "author": "James Douitsis",
+  "license": "ISC"
+}
